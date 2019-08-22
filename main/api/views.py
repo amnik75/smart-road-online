@@ -106,16 +106,16 @@ class GetSpeedCar(APIView):
         for i in args:
             if int(i.hour) < hour and int(i.camera.sequence) > max and int(i.hour) < hour and int(i.day) == day and int(i.year) == year and int(i.month) == month:
                 max = int(i.camera.sequence)
-                ma = i.camera
+                ma = i
             elif  int(i.camera.sequence) > max and int(i.hour) == hour and int(i.minute) <= minute and int(i.day) == day and int(i.year) == year and int(i.month) == month:
                 max = int(i.camera.sequence)
-                ma = i.camera
+                ma = i
             if int(i.hour) < hour and int(i.camera.sequence) < min and int(i.day) == day and int(i.year) == year and int(i.month) == month:
                 min = int(i.camera.sequence)
-                mi = i.camera
+                mi = i
             elif  int(i.camera.sequence) < min and int(i.hour) == hour and int(i.minute) <= minute and int(i.day) == day and int(i.year) == year and int(i.month) == month:
                 min = int(i.camera.sequence)
-                mi = i.camera
+                mi = i
         if ma == None or mi == None:
             return Response("There are not any data!")\
 
