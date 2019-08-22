@@ -59,7 +59,7 @@ class GetNumCar(APIView):
     def post(self,request,format = None):
         seq = request.POST["sequence"]
         rid = request.POST["roadId"]
-        cam_id = Camera.objects.filter(sequence=seq,road_id=rid).first().id
+        cam_id = Camera.objects.filter(sequence=seq,road_id=rid).first().cam_id
         h = int(request.POST["hour"])
         m = int(request.POST["minute"])
         t = int(request.POST["period"])
