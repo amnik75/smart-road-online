@@ -127,7 +127,8 @@ class GetSpeedCar(APIView):
             t = 1
         if d == 0:
             return Response("There are not enough data!")
-        return Response(d/t)
+        ans = d/t
+        return Response(ans)
 
 class CreateCamera(APIView):
     def post(self, request, format= None):
